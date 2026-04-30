@@ -13,7 +13,7 @@ import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 function Navbar() {
   return (
-    <nav className="w-full py-4 px-6 absolute top-0 left-0 z-50 flex justify-between items-center">
+    <nav className="w-full py-4 px-4 md:px-8 lg:px-12 absolute top-0 left-0 z-50 flex justify-between items-center">
       <div className="text-[#F5F1E8] font-serif text-xl md:text-2xl tracking-wide opacity-90">
         GharShiksha <span className="font-sans text-sm md:text-base font-light text-gray-400">by Anshuman Verma</span>
       </div>
@@ -35,23 +35,33 @@ function Footer() {
   );
 }
 
+function StickyMobileCTA() {
+  return (
+    <div className="md:hidden fixed bottom-0 left-0 w-full bg-[#0D0F1A] border-t border-gray-800 z-50 flex items-center p-3 gap-3 shadow-[0_-4px_20px_rgba(0,0,0,0.15)]">
+      <a href="#contact" className="flex-1 bg-[#2E6F5E] text-white text-center py-2.5 rounded-md font-medium text-sm hover:scale-[1.03] transition-transform">Book Free Demo</a>
+      <a href="https://wa.me/917869055374" className="flex-1 bg-[#25D366] text-white text-center py-2.5 rounded-md font-medium text-sm flex justify-center items-center gap-2 hover:scale-[1.03] transition-transform">WhatsApp</a>
+    </div>
+  );
+}
+
 function App() {
   return (
-    <div className="font-sans antialiased text-[#0D0F1A] bg-[#F5F1E8]">
+    <div className="font-sans antialiased text-[#0D0F1A] bg-[#F5F1E8] pb-[60px] md:pb-0">
       <Navbar />
       <Hero />
       <TrustStrip />
       <Features />
+      <Pricing />
+      <Contact />
       <Difference />
       <About />
-      <WhyChooseMe />
       <Subjects />
-      <Pricing />
       <HowItWorks />
-      <Contact />
+      <WhyChooseMe />
       <FinalCTA />
       <Footer />
       <FloatingWhatsApp />
+      <StickyMobileCTA />
     </div>
   );
 }

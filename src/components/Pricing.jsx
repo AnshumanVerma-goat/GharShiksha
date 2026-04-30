@@ -18,7 +18,7 @@ export default function Pricing() {
   };
 
   return (
-    <section id="pricing" className="py-24 px-6 bg-white">
+    <section id="pricing" className="py-10 md:py-16 px-4 md:px-12 lg:px-20 bg-white">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-serif text-4xl md:text-5xl text-[#0D0F1A] mb-4">Flexible Pricing</h2>
@@ -33,12 +33,12 @@ export default function Pricing() {
         >
           <div className="mb-8">
             <label className="block text-sm font-medium text-gray-400 uppercase tracking-widest mb-4">Select Class Group</label>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {['1-5', '6-8', '9-10'].map((cls) => (
                 <button
                   key={cls}
                   onClick={() => setSelectedClass(cls)}
-                  className={`py-3 px-2 rounded-lg font-medium transition-all ${
+                  className={`py-3 px-2 rounded-lg font-medium transition-all w-full ${
                     selectedClass === cls 
                       ? 'bg-[#2E6F5E] text-white' 
                       : 'bg-transparent border border-gray-700 text-gray-400 hover:border-gray-500'
@@ -72,14 +72,15 @@ export default function Pricing() {
             </div>
             <a 
               href="#contact" 
-              className="w-full md:w-auto bg-[#F5F1E8] text-[#0D0F1A] px-8 py-4 rounded-md font-medium text-lg hover:bg-white transition-colors text-center shadow-lg"
+              className="w-full md:w-auto bg-[#F5F1E8] text-[#0D0F1A] px-8 py-4 rounded-md font-medium text-base md:text-lg hover:bg-white hover:scale-[1.03] transition-all duration-300 text-center shadow-lg"
             >
-              Start Trial Class
+              Start Free Trial
             </a>
           </div>
           
-          <div className="mt-8 text-center text-sm text-gray-400">
-            <p>Final fee depends on subjects and study hours. <span className="text-[#2E6F5E] font-medium">Flexible timings available.</span></p>
+          <div className="mt-8 text-center text-sm">
+            <p className="text-gray-400 mb-1">Final fee depends on subjects and study hours. <span className="text-[#2E6F5E] font-medium">Flexible timings available.</span></p>
+            <p className="text-gray-500 font-medium">No fixed fees. Final plan customized after understanding your child.</p>
           </div>
         </motion.div>
       </div>

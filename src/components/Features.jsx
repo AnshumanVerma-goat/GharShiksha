@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { Target, UserCheck, TrendingUp } from 'lucide-react';
+import { useState } from 'react';
 
 export default function Features() {
+  const [showAll, setShowAll] = useState(false);
   const features = [
     {
       icon: <Target className="w-8 h-8 text-[#2E6F5E]" />,
@@ -21,7 +23,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-[#F5F1E8]">
+    <section className="py-10 md:py-16 px-4 md:px-8 lg:px-12 bg-[#F5F1E8]">
       <div className="max-w-6xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -41,7 +43,7 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white p-8 rounded-xl shadow-sm border border-gray-100"
+              className={`bg-white p-8 rounded-xl shadow-sm border border-gray-100 ${idx >= 1 && !showAll ? 'hidden md:block' : 'block'}`}
             >
               <div className="bg-[#F5F1E8] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 {item.icon}
@@ -51,6 +53,17 @@ export default function Features() {
             </motion.div>
           ))}
         </div>
+        
+        {!showAll && (
+          <div className="mt-8 text-center md:hidden">
+            <button 
+              onClick={() => setShowAll(true)}
+              className="px-6 py-3 border border-[#2E6F5E] text-[#2E6F5E] rounded-md font-medium text-sm hover:bg-[#2E6F5E] hover:text-white transition-colors"
+            >
+              View More
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
