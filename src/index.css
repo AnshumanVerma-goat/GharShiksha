@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --color-dark: #0D0F1A;
+  --color-light: #F5F1E8;
+  --color-accent: #2E6F5E;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: 'DM Serif Display', serif;
+}
+
+/* UI Improvements */
+button, a {
+  transition: all 0.3s ease;
+}
+
+button:hover, a:hover {
+  transform: translateY(-1px);
+}
+
+.shadow-card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
